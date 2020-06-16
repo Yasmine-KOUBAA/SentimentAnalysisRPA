@@ -1,0 +1,413 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test01" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Twitter;assembly=ConnectorTwitter_TweetMoaSharp" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:ui1="clr-namespace:UiPath.IBMWatsonEmpathy;assembly=UiPath.IBMWatsonEmpathy" xmlns:uia="clr-namespace:UiPath.IBMWatsonLanguageTranslator.Activities;assembly=UiPath.IBMWatsonLanguageTranslator.Activities" xmlns:uia1="clr-namespace:UiPath.IBMWatsonEmpathy.Activities;assembly=UiPath.IBMWatsonEmpathy.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Word" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1867,4719</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>test01_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="44">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.IBMWatsonEmpathy</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Cognitive.Text.Analysis</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IBMWatsonEmpathy</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Cognitive</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test01" sap:VirtualizedContainerService.HintSize="1877,4514" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="main-Sequence" sap:VirtualizedContainerService.HintSize="1835,4422" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ui1:Tone" Name="Tone" />
+        <Variable x:TypeArguments="x:String" Name="mot" />
+        <Variable x:TypeArguments="sd:DataTable" Name="DataTweet" />
+        <Variable x:TypeArguments="x:String" Name="TweetText" />
+        <Variable x:TypeArguments="x:Double" Default="0" Name="sJoy" />
+        <Variable x:TypeArguments="x:Double" Default="0" Name="sAnger" />
+        <Variable x:TypeArguments="x:Double" Default="0" Name="sFear" />
+        <Variable x:TypeArguments="x:Double" Default="0" Name="sSadness" />
+        <Variable x:TypeArguments="sd:DataTable" Name="OutputData" />
+        <Variable x:TypeArguments="x:Double" Name="sConfident" />
+        <Variable x:TypeArguments="x:Double" Name="sAnalytical" />
+        <Variable x:TypeArguments="x:Double" Default="0" Name="sTentative" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <t:Get_Tweets AccessSecret="j19nvbND13hOvFLuI9D3hWJvygzeCIDgeKbmEbxMOpinF" AccessToken="1224619960904962049-wAgkucY9B0LVE9u0hsjVQER0tyxiUo" ConsumerKey="gQkPhKIJNQwQKZGuXX33KzZMI" ConsumerSecret="NmOMxMFyHCxH0A4qKv3kUMELh1ECimHSnF42fktlsSgr6RwIBi" Count="20" DisplayName="Get tweets" sap:VirtualizedContainerService.HintSize="1793,22" sap2010:WorkflowViewState.IdRef="Get_Tweets_1" OutputResult="[DataTweet]" SearchKey="[in_Word]" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1793,4096" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="1743,3948" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1701,3856" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="TweetText2" />
+                  <Variable x:TypeArguments="ui1:SentenceTone[]" Name="TonesData" />
+                  <Variable x:TypeArguments="x:String" Name="language" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="1659,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[row("Text").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <TryCatch DisplayName="Try Catch- Identify Language" sap:VirtualizedContainerService.HintSize="1659,287" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <uia:IdentifyLanguage APIKey="whvBt_ZPg2PQMqIJK7onsp6izZ83pA1O8X1pSDp_Feu3" DisplayName="Identify Language" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="IdentifyLanguage_1" Language="[language]" Text="[TweetText]" URL="https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/91b3a813-84b6-4d8f-b73d-6fbb70af472c" />
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1659,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[language]" />
+                <Assign sap:VirtualizedContainerService.HintSize="1659,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="ui1:Tone">[Tone]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="ui1:Tone">[Nothing]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[language is Nothing]" sap:VirtualizedContainerService.HintSize="1659,999" sap2010:WorkflowViewState.IdRef="If_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="1352,851" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="TweetText3" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[language.Equals(&quot;English&quot;)]" sap:VirtualizedContainerService.HintSize="1310,759" sap2010:WorkflowViewState.IdRef="If_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;eng&quot;+TweetText]" />
+                            <uia1:AnalyzeGeneralTone APIKey="qXXJ_oH3t3ndvXzmfDC5IAz_wh0DAnZxUOa5xnEfAjba" DisplayName="Analyze General Tone" DocumentTone="[Tone]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AnalyzeGeneralTone_1" InLanguage="English" OutLanguage="English" SentenceTones="[TonesData]" Text="[TweetText]" URL="https://api.eu-gb.tone-analyzer.watson.cloud.ibm.com/instances/460c4c1e-9946-47ae-bb86-c62563e929e2" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="889,611" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[language.Equals(&quot;French&quot;)]" sap:VirtualizedContainerService.HintSize="847,519" sap2010:WorkflowViewState.IdRef="If_11">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;fren&quot;+TweetText]" />
+                                  <uia1:AnalyzeGeneralTone APIKey="qXXJ_oH3t3ndvXzmfDC5IAz_wh0DAnZxUOa5xnEfAjba" DisplayName="Analyze General Tone" DocumentTone="[Tone]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AnalyzeGeneralTone_2" InLanguage="French" OutLanguage="English" SentenceTones="[TonesData]" Text="[TweetText]" URL="https://api.eu-gb.tone-analyzer.watson.cloud.ibm.com/instances/460c4c1e-9946-47ae-bb86-c62563e929e2" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="if-tr- Sequence" sap:VirtualizedContainerService.HintSize="426,371" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uia:TranslateText APIKey="whvBt_ZPg2PQMqIJK7onsp6izZ83pA1O8X1pSDp_Feu3" DisplayName="Translate Text" From="[language]" sap:VirtualizedContainerService.HintSize="384,86" sap2010:WorkflowViewState.IdRef="TranslateText_1" Output="[TweetText2]" Text="[TweetText]" To="English" URL="https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/91b3a813-84b6-4d8f-b73d-6fbb70af472c" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;oth&quot;+TweetText2]" />
+                                  <uia1:AnalyzeGeneralTone APIKey="qXXJ_oH3t3ndvXzmfDC5IAz_wh0DAnZxUOa5xnEfAjba" DisplayName="Analyze General Tone" DocumentTone="[Tone]" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="AnalyzeGeneralTone_3" InLanguage="English" OutLanguage="English" SentenceTones="[TonesData]" Text="[TweetText2]" URL="https://api.eu-gb.tone-analyzer.watson.cloud.ibm.com/instances/460c4c1e-9946-47ae-bb86-c62563e929e2" />
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[Tone is Nothing]" sap:VirtualizedContainerService.HintSize="1659,2067" sap2010:WorkflowViewState.IdRef="If_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Else>
+                    <Sequence DisplayName="if-Sequence" sap:VirtualizedContainerService.HintSize="526,1919" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[Tone.ToneName]" />
+                      <If Condition="[Tone.ToneName.Equals(&quot;Analytical&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sAnalytical]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Confident&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sConfident]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Tentative&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sTentative]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Joy&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sJoy]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Anger&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sAnger]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Fear&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sFear]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <If Condition="[Tone.ToneName.Equals(&quot;Sadness&quot;)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(Tone.Confidence.ToString)+sSadness]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <ui:WriteTextFile DisplayName="Write Text File" FileName="C:\xampp\htdocs\SentimentAnalysis\Result1.JSON" sap:VirtualizedContainerService.HintSize="1793,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;[{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: 0,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;mot&quot;+Chr(34)+&quot;,&quot;+Chr(34)+&quot;mot&quot;+Chr(34)+&quot;: &quot;+Chr(34)+in_Word+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sJoy.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Joy&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sFear.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Fear&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnger.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Anger&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sTentative.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Tentative&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sConfident.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Confident&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnalytical.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Analytical&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sSadness.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Sadness&quot;+Chr(34)+&quot;}]&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:WriteTextFile>
+    </Sequence>
+  </Sequence>
+</Activity>

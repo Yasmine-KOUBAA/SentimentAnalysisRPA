@@ -1,0 +1,1 @@
+{"sentiment": [{"name": "neutral", "score": 24}, {"name": "positif", "score": 4}, {"name": "negatif", "score": 2}]}
