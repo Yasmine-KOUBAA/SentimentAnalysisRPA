@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1277,1106</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>989.6,1113.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>testPython_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -54,7 +54,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="testPython" sap:VirtualizedContainerService.HintSize="1002,941" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="testPython" sap:VirtualizedContainerService.HintSize="1000,948.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="texte" />
       <Variable x:TypeArguments="x:String" Name="var1" />
@@ -67,28 +67,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:MicrosoftTextAnalysis Error="{x:Null}" RawResult="{x:Null}" AnalysisType="Language, Sentiment, KeyPhrases" DisplayName="Microsoft Text Analysis" sap:VirtualizedContainerService.HintSize="960,60" sap2010:WorkflowViewState.IdRef="MicrosoftTextAnalysis_1" Key="bf6dc18d396545969ff2cc74dc4f34be" KeyPhrases="[kp]" Language="[lang]" Sentiment="[sent]" ServiceUrl="https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/" Text="[in_Texte]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="960,261" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <p:MicrosoftTextAnalysis Error="{x:Null}" RawResult="{x:Null}" AnalysisType="Language, Sentiment, KeyPhrases" DisplayName="Microsoft Text Analysis" sap:VirtualizedContainerService.HintSize="958.4,60" sap2010:WorkflowViewState.IdRef="MicrosoftTextAnalysis_1" Key="bf6dc18d396545969ff2cc74dc4f34be" KeyPhrases="[kp]" Language="[lang]" Sentiment="[sent]" ServiceUrl="https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/" Text="[in_Texte]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="958.4,264" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[(math.Round(sent*100,2)).ToString +&quot; %    &quot;+lang +&quot;   &quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[(math.Round(sent*100,2)).ToString +&quot; %    &quot;+lang +&quot;   &quot;]" />
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <If Condition="[sent*100 &lt; 50]" sap:VirtualizedContainerService.HintSize="960,448" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[sent*100 &lt; 50]" sap:VirtualizedContainerService.HintSize="958.4,452" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Sentiment]</OutArgument>
             </Assign.To>
@@ -99,15 +105,15 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="611,300" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="610.4,302.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[sent*100 = 50]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[sent*100 = 50]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_Sentiment]</OutArgument>
                 </Assign.To>
@@ -117,7 +123,7 @@
               </Assign>
             </If.Then>
             <If.Else>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_Sentiment]</OutArgument>
                 </Assign.To>

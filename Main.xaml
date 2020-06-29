@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1228,2392.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Twitter;assembly=ConnectorTwitter_TweetMoaSharp" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:ui1="clr-namespace:UiPath.IBMWatsonEmpathy;assembly=UiPath.IBMWatsonEmpathy" xmlns:uia="clr-namespace:UiPath.IBMWatsonLanguageTranslator.Activities;assembly=UiPath.IBMWatsonLanguageTranslator.Activities" xmlns:uia1="clr-namespace:UiPath.IBMWatsonEmpathy.Activities;assembly=UiPath.IBMWatsonEmpathy.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1202.4,4322.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Twitter;assembly=ConnectorTwitter_TweetMoaSharp" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:ui1="clr-namespace:UiPath.IBMWatsonEmpathy;assembly=UiPath.IBMWatsonEmpathy" xmlns:uia="clr-namespace:UiPath.IBMWatsonLanguageTranslator.Activities;assembly=UiPath.IBMWatsonLanguageTranslator.Activities" xmlns:uia1="clr-namespace:UiPath.IBMWatsonEmpathy.Activities;assembly=UiPath.IBMWatsonEmpathy.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -59,7 +59,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="main-Sequence" sap:VirtualizedContainerService.HintSize="1212.8,2128" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="main-Sequence" sap:VirtualizedContainerService.HintSize="1212.8,4157.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui1:Tone" Name="Tone" />
       <Variable x:TypeArguments="x:String" Name="mot" />
@@ -72,11 +72,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="OutputData" />
       <Variable x:TypeArguments="x:Double" Name="sConfident" />
       <Variable x:TypeArguments="x:Double" Name="sAnalytical" />
-      <Variable x:TypeArguments="x:Double" Name="sTentative">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Double" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Double" Default="0" Name="sTentative" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -95,19 +91,19 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:InputDialog>
     <t:Get_Tweets AccessSecret="j19nvbND13hOvFLuI9D3hWJvygzeCIDgeKbmEbxMOpinF" AccessToken="1224619960904962049-wAgkucY9B0LVE9u0hsjVQER0tyxiUo" ConsumerKey="gQkPhKIJNQwQKZGuXX33KzZMI" ConsumerSecret="NmOMxMFyHCxH0A4qKv3kUMELh1ECimHSnF42fktlsSgr6RwIBi" Count="20" DisplayName="Get tweets" sap:VirtualizedContainerService.HintSize="1171.2,22.4" sap2010:WorkflowViewState.IdRef="Get_Tweets_2" OutputResult="[DataTweet]" SearchKey="[mot]" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1171.2,1665.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1171.2,3695.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="1121.6,1516.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence sap:VirtualizedContainerService.HintSize="1121.6,3546.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1080,1424" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1080,3453.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="TweetText2" />
                 <Variable x:TypeArguments="ui1:SentenceTone[]" Name="TonesData" />
@@ -206,10 +202,10 @@
               </If>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1038.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[TweetText2]" />
               <uia1:AnalyzeGeneralTone APIKey="qXXJ_oH3t3ndvXzmfDC5IAz_wh0DAnZxUOa5xnEfAjba" DisplayName="Analyze General Tone" DocumentTone="[Tone]" sap:VirtualizedContainerService.HintSize="1038.4,21.6" sap2010:WorkflowViewState.IdRef="AnalyzeGeneralTone_1" InLanguage="English" OutLanguage="English" SentenceTones="[TonesData]" Text="[TweetText2]" URL="https://api.eu-gb.tone-analyzer.watson.cloud.ibm.com/instances/460c4c1e-9946-47ae-bb86-c62563e929e2" />
-              <If Condition="[Tone is Nothing]" sap:VirtualizedContainerService.HintSize="1038.4,52.8" sap2010:WorkflowViewState.IdRef="If_7">
+              <If Condition="[Tone is Nothing]" sap:VirtualizedContainerService.HintSize="1038.4,2082.4" sap2010:WorkflowViewState.IdRef="If_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
