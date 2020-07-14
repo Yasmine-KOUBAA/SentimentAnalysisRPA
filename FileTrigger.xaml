@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FileTrigger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1688,3011.2" sap2010:WorkflowViewState.IdRef="FileTrigger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FileTrigger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1185.6,3011.2" sap2010:WorkflowViewState.IdRef="FileTrigger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
@@ -53,7 +53,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FileTrigger" sap:VirtualizedContainerService.HintSize="1698.4,2846.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FileTrigger" sap:VirtualizedContainerService.HintSize="1149.6,2846.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="var" />
       <Variable x:TypeArguments="x:String" Name="result" />
@@ -78,15 +78,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile Condition="[var]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1656.8,2753.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile Condition="[var]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1108,2753.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence sap:VirtualizedContainerService.HintSize="1621.6,2586.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="1072.8,2586.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1580,2493.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1031.2,2493.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <TryCatch.Try>
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="994.4,2262.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
@@ -94,7 +94,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:FileChangeTriggerV2 ContinueOnError="{x:Null}" FileName="{x:Null}" ChangeType="Created" DisplayName="File Change Trigger" sap:VirtualizedContainerService.HintSize="952.8,2169.6" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV2_1" IncludeSubdirectories="False" NotifyFilters="FileName" Path="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node">
+                <ui:FileChangeTriggerV2 ContinueOnError="{x:Null}" FileName="{x:Null}" ChangeType="Created" DisplayName="File Change Trigger" sap:VirtualizedContainerService.HintSize="952.8,2169.6" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV2_1" IncludeSubdirectories="False" NotifyFilters="FileName" Path="C:\Temp">
                   <ui:FileChangeTriggerV2.Body>
                     <ActivityAction x:TypeArguments="ui:FileChangeInfo">
                       <ActivityAction.Argument>
@@ -106,8 +106,8 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ReadTextFile Content="[word]" DisplayName="Read Text File" FileName="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node\word.txt" sap:VirtualizedContainerService.HintSize="877.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-                        <Sequence sap:VirtualizedContainerService.HintSize="877.6,1816.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <ui:ReadTextFile Content="[word]" DisplayName="Read Text File" FileName="C:\Temp\word.txt" sap:VirtualizedContainerService.HintSize="877.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                        <Sequence sap:VirtualizedContainerService.HintSize="877.6,1879.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +188,7 @@
                                       <OutArgument x:TypeArguments="x:String" x:Key="out_result">[result]</OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node\result2.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[result]">
+                                  <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Temp\result2.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[result]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,7 +209,7 @@
                                       <OutArgument x:TypeArguments="x:String" x:Key="out_result">[result]</OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node\result3.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[result]">
+                                  <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Temp\result3.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[result]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +233,7 @@
                                     <OutArgument x:TypeArguments="x:String" x:Key="out_result">[result]</OutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
-                                <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node\result1.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[result]">
+                                <ui:WriteTextFile DisplayName="Write JSON File" FileName="C:\Temp\result1.JSON" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[result]">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -244,8 +244,8 @@
                               </Sequence>
                             </If.Else>
                           </If>
+                          <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="836,22.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="C:\Temp\word.txt" />
                         </Sequence>
-                        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="877.6,22.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="C:\Users\user\Documents\sentiment-analysis-project-goldshard2020\backend-node\word.txt" />
                       </Sequence>
                     </ActivityAction>
                   </ui:FileChangeTriggerV2.Body>
@@ -262,7 +262,7 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1546.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="997.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>

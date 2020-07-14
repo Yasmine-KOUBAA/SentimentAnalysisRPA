@@ -79,7 +79,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1171.2,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label=" Word :  " Title="Choose a word">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1171.2,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label=" Word :  " Title="Type  word or Hashtag">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[mot]</OutArgument>
       </ui:InputDialog.Result>
