@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2064,3115.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1633.6,3068.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Web_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -69,7 +69,7 @@
       <AssemblyReference>DnsClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="main " sap:VirtualizedContainerService.HintSize="2074.4,2950.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="main " sap:VirtualizedContainerService.HintSize="1644,2904" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="mot" />
       <Variable x:TypeArguments="sd:DataTable" Name="DataTweet" />
@@ -88,7 +88,11 @@
       <Variable x:TypeArguments="x:Int32" Default="0" Name="sPositive" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="sNegative" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="sNeutral" />
-      <Variable x:TypeArguments="scg:IEnumerable(x:Int32)" Default="[{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34}]" Name="newArray" />
+      <Variable x:TypeArguments="scg:IEnumerable(x:Int32)" Name="newArray">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="scg:IEnumerable(x:Int32)" ExpressionText="{}{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="language">
         <Variable.Default>
           <Literal x:TypeArguments="x:String" Value="" />
@@ -104,15 +108,15 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="2032.8,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+    <Assign sap:VirtualizedContainerService.HintSize="1602.4,60" sap2010:WorkflowViewState.IdRef="Assign_37">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TweetCount]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">500</InArgument>
+        <InArgument x:TypeArguments="x:Int32">20</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="2032.8,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+    <Assign sap:VirtualizedContainerService.HintSize="1602.4,60" sap2010:WorkflowViewState.IdRef="Assign_53">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
       </Assign.To>
@@ -120,7 +124,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch- Identify Language" sap:VirtualizedContainerService.HintSize="2032.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch- Identify Language" sap:VirtualizedContainerService.HintSize="1602.4,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -156,9 +160,9 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <t:Get_Tweets AccessSecret="j19nvbND13hOvFLuI9D3hWJvygzeCIDgeKbmEbxMOpinF" AccessToken="1224619960904962049-wAgkucY9B0LVE9u0hsjVQER0tyxiUo" ConsumerKey="gQkPhKIJNQwQKZGuXX33KzZMI" ConsumerSecret="NmOMxMFyHCxH0A4qKv3kUMELh1ECimHSnF42fktlsSgr6RwIBi" Count="[TweetCount]" DisplayName="Get tweets" sap:VirtualizedContainerService.HintSize="2032.8,22.4" sap2010:WorkflowViewState.IdRef="Get_Tweets_1" OutputResult="[DataTweet]" SearchKey="[in_Word]" />
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[DataTweet]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;C:\Temp\tweets&quot;+in_Word+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="2032.8,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2032.8,365.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <t:Get_Tweets AccessSecret="j19nvbND13hOvFLuI9D3hWJvygzeCIDgeKbmEbxMOpinF" AccessToken="1224619960904962049-wAgkucY9B0LVE9u0hsjVQER0tyxiUo" ConsumerKey="gQkPhKIJNQwQKZGuXX33KzZMI" ConsumerSecret="NmOMxMFyHCxH0A4qKv3kUMELh1ECimHSnF42fktlsSgr6RwIBi" Count="[TweetCount]" DisplayName="Get tweets" sap:VirtualizedContainerService.HintSize="1602.4,22.4" sap2010:WorkflowViewState.IdRef="Get_Tweets_1" OutputResult="[DataTweet]" SearchKey="[in_Word]" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[DataTweet]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;C:\Temp\tweets&quot;+in_Word+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="1602.4,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1602.4,365.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,7 +188,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If Condition="[language.Equals(&quot;Arabic&quot;)]" sap:VirtualizedContainerService.HintSize="2032.8,1523.2" sap2010:WorkflowViewState.IdRef="If_12">
+    <If Condition="[language.Equals(&quot;Arabic&quot;)]" sap:VirtualizedContainerService.HintSize="1602.4,1476.8" sap2010:WorkflowViewState.IdRef="If_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,308 +196,85 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="973.6,956.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-          <ui:ForEachRow.Body>
-            <ActivityAction x:TypeArguments="sd:DataRow">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="924,808" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap:VirtualizedContainerService.HintSize="882.4,715.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="840.8,60" sap2010:WorkflowViewState.IdRef="Assign_23">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[row("Text").toString]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="840.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[counter]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="840.8,60" sap2010:WorkflowViewState.IdRef="Assign_54">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Parallel sap:VirtualizedContainerService.HintSize="840.8,134.4" sap2010:WorkflowViewState.IdRef="Parallel_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Text">[TweetText]</InArgument>
-                        <OutArgument x:TypeArguments="x:String" x:Key="out_ToneName">[TName]</OutArgument>
-                        <OutArgument x:TypeArguments="x:Double" x:Key="out_ToneConfidence">[TConf]</OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Texte">[TweetText]</InArgument>
-                        <OutArgument x:TypeArguments="x:String" x:Key="out_Sentiment">[sentiment]</OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </Parallel>
-                  <Parallel sap:VirtualizedContainerService.HintSize="840.8,115.2" sap2010:WorkflowViewState.IdRef="Parallel_4">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_3">
-                        <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_24">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sAnalytical]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_25">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sConfident]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_26">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sTentative]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_27">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sJoy]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sAnger]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_29">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sFear]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_30">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">[TConf+sSadness]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </Switch>
-                    </Sequence>
-                    <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_11">
-                        <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_31">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[sPositive]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[1+sPositive]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Then>
-                        <If.Else>
-                          <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_10">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_32">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[sNegative]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[sNegative + 1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                            <If.Else>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_33">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[sNeutral]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[sNeutral+1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Else>
-                          </If>
-                        </If.Else>
-                      </If>
-                    </Sequence>
-                  </Parallel>
-                </Sequence>
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEachRow.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:ForEachRow>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="1015.2,1373.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+        <Sequence sap:VirtualizedContainerService.HintSize="1015.2,1049.6" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="973.6,1188" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="973.6,956.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="924,1039.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="924,808" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="882.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[counter]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="882.4,60" sap2010:WorkflowViewState.IdRef="Assign_55">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Sequence sap:VirtualizedContainerService.HintSize="882.4,713.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence sap:VirtualizedContainerService.HintSize="882.4,715.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="840.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                    <Assign sap:VirtualizedContainerService.HintSize="840.8,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[row("Text").toString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="840.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[counter]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="840.8,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Parallel sap:VirtualizedContainerService.HintSize="840.8,134.4" sap2010:WorkflowViewState.IdRef="Parallel_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch.Try>
-                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_41">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[row("Text").toString]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </TryCatch.Try>
-                      <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ActivityAction x:TypeArguments="s:Exception">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                            </ActivityAction.Argument>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_42">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">
-                                  <Literal x:TypeArguments="x:String" Value="" />
-                                </InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </ActivityAction>
-                        </Catch>
-                      </TryCatch.Catches>
-                    </TryCatch>
-                    <Parallel sap:VirtualizedContainerService.HintSize="840.8,134.4" sap2010:WorkflowViewState.IdRef="Parallel_5">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_Text">[TweetText]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="out_ToneName">[TName]</OutArgument>
                           <OutArgument x:TypeArguments="x:Double" x:Key="out_ToneConfidence">[TConf]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_Texte">[TweetText]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="out_Sentiment">[sentiment]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Parallel>
-                    <Parallel sap:VirtualizedContainerService.HintSize="840.8,115.2" sap2010:WorkflowViewState.IdRef="Parallel_6">
+                    <Parallel sap:VirtualizedContainerService.HintSize="840.8,115.2" sap2010:WorkflowViewState.IdRef="Parallel_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_4">
-                          <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                          <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
                             </Assign.To>
@@ -501,7 +282,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sAnalytical]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                          <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
                             </Assign.To>
@@ -509,7 +290,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sConfident]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+                          <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
                             </Assign.To>
@@ -517,7 +298,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sTentative]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                          <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
                             </Assign.To>
@@ -525,7 +306,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sJoy]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+                          <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
                             </Assign.To>
@@ -533,7 +314,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sAnger]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                          <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_29">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
                             </Assign.To>
@@ -541,7 +322,7 @@
                               <InArgument x:TypeArguments="x:Double">[TConf+sFear]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                          <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
                             </Assign.To>
@@ -551,16 +332,16 @@
                           </Assign>
                         </Switch>
                       </Sequence>
-                      <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_14">
+                        <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_11">
                           <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_31">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[sPositive]</OutArgument>
                               </Assign.To>
@@ -570,9 +351,9 @@
                             </Assign>
                           </If.Then>
                           <If.Else>
-                            <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_13">
+                            <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_10">
                               <If.Then>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[sNegative]</OutArgument>
                                   </Assign.To>
@@ -582,7 +363,7 @@
                                 </Assign>
                               </If.Then>
                               <If.Else>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[sNeutral]</OutArgument>
                                   </Assign.To>
@@ -600,231 +381,455 @@
                 </Sequence>
               </ActivityAction>
             </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="973.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="543.2,1327.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="501.6,714.4" sap2010:WorkflowViewState.IdRef="CommentOut_4">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="348,310.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="466.4,636" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ParallelForEach x:TypeArguments="x:Int32" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="306.4,217.6" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_3" Values="[newArray]">
+                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTweet]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="424.8,543.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,394.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[counter]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Sequence sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="840.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[row("Text").toString]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <Parallel sap:VirtualizedContainerService.HintSize="840.8,134.4" sap2010:WorkflowViewState.IdRef="Parallel_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Text">[TweetText]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_ToneName">[TName]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Double" x:Key="out_ToneConfidence">[TConf]</OutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Texte">[TweetText]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_Sentiment">[sentiment]</OutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Parallel>
+                          <Parallel sap:VirtualizedContainerService.HintSize="840.8,115.2" sap2010:WorkflowViewState.IdRef="Parallel_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sAnalytical]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sConfident]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sTentative]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sJoy]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sAnger]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sFear]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">[TConf+sSadness]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Switch>
+                            </Sequence>
+                            <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_14">
+                                <If.Then>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[sPositive]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[1+sPositive]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Then>
+                                <If.Else>
+                                  <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_13">
+                                    <If.Then>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[sNegative]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[sNegative + 1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[sNeutral]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[sNeutral+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </Parallel>
+                        </Sequence>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                </ui:ForEachRow>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <ParallelForEach x:TypeArguments="x:Int32" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="501.6,480" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_3" Values="[newArray]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="x:Int32">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="241.6,331.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="x:Int32">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
-                    </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <TryCatch.Try>
+                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[DataTweet(item)("Text").toString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch.Try>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_22">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[DataTweet(item)("Text").toString]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:Exception">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                              </ActivityAction.Argument>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_36">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <Literal x:TypeArguments="x:String" Value="" />
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                      </TryCatch>
-                      <Parallel sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Text">[TweetText]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_ToneName">[TName]</OutArgument>
-                            <OutArgument x:TypeArguments="x:Double" x:Key="out_ToneConfidence">[TConf]</OutArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Texte">[TweetText]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_Sentiment">[sentiment]</OutArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                      </Parallel>
-                      <Parallel sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-                            <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[TweetText]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <Parallel sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextToneAnalyzer workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="TextToneAnalyzer.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Text">[TweetText]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_ToneName">[TName]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double" x:Key="out_ToneConfidence">[TConf]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextSentimentAnalysis workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TextSentimentAnalysis.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Texte">[TweetText]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_Sentiment">[sentiment]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Parallel>
+                <Parallel sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Case Tone" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TName]" sap:VirtualizedContainerService.HintSize="496.8,280" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                      <Assign x:Key="Analytical" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sAnalytical]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sConfident]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sTentative]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sJoy]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sAnger]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sFear]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[TConf+sSadness]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Switch>
+                  </Sequence>
+                  <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[sPositive]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[1+sPositive]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_8">
+                          <If.Then>
+                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sAnalytical]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Int32">[sNegative]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sAnalytical]</InArgument>
+                                <InArgument x:TypeArguments="x:Int32">[sNegative + 1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign x:Key="Confident" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          </If.Then>
+                          <If.Else>
+                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sConfident]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Int32">[sNeutral]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sConfident]</InArgument>
+                                <InArgument x:TypeArguments="x:Int32">[sNeutral+1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign x:Key="Tentative" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sTentative]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sTentative]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Assign x:Key="Joy" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sJoy]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sJoy]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Assign x:Key="Anger" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sAnger]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sAnger]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Assign x:Key="Fear" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sFear]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sFear]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Assign x:Key="Sadness" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[sSadness]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[TConf+sSadness]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Switch>
-                        </Sequence>
-                        <Sequence DisplayName="Case Sentiment" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[sentiment.Equals(&quot;Positive&quot;)]" sap:VirtualizedContainerService.HintSize="875.2,359.2" sap2010:WorkflowViewState.IdRef="If_9">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_21">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[sPositive]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[1+sPositive]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                            <If.Else>
-                              <If Condition="[sentiment.Equals(&quot;Negative&quot;)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_8">
-                                <If.Then>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_15">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Int32">[sNegative]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Int32">[sNegative + 1]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                </If.Then>
-                                <If.Else>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Int32">[sNeutral]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Int32">[sNeutral+1]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                </If.Else>
-                              </If>
-                            </If.Else>
-                          </If>
-                        </Sequence>
-                      </Parallel>
-                    </Sequence>
-                  </ActivityAction>
-                </ParallelForEach>
+                          </If.Else>
+                        </If>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </Parallel>
               </Sequence>
-            </ui:CommentOut.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:CommentOut>
+            </ActivityAction>
+          </ParallelForEach>
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2032.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sJoy.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Joy&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sFear.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Fear&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnger.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Anger&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sTentative.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Tentative&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sConfident.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Confident&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnalytical.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Analytical&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sSadness.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Sadness&quot;+Chr(34)+&quot;}]&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1602.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sJoy.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Joy&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sFear.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Fear&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnger.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Anger&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sTentative.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Tentative&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sConfident.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Confident&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sAnalytical.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Analytical&quot;+Chr(34)+&quot;},{&quot;+Chr(34)+&quot;score&quot;+Chr(34)+&quot;: &quot;+sSadness.ToString+&quot;,&quot;+Chr(34)+&quot;tone_name&quot;+Chr(34)+&quot;: &quot;+Chr(34)+&quot;Sadness&quot;+Chr(34)+&quot;}]&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -832,7 +837,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2032.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Pos : &quot;+sPositive.ToString+ &quot; Neg : &quot;+sNegative.ToString+&quot; Neutral : &quot;+sNeutral.ToString]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1602.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Pos : &quot;+sPositive.ToString+ &quot; Neg : &quot;+sNegative.ToString+&quot; Neutral : &quot;+sNeutral.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -840,7 +845,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign sap:VirtualizedContainerService.HintSize="2032.8,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+    <Assign sap:VirtualizedContainerService.HintSize="1602.4,60" sap2010:WorkflowViewState.IdRef="Assign_34">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_result]</OutArgument>
       </Assign.To>
@@ -848,7 +853,7 @@
         <InArgument x:TypeArguments="x:String">["[{"+Chr(34)+"mot"+Chr(34)+": "+Chr(34)+in_Word+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sJoy.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Joy"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sFear.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Fear"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sAnger.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Anger"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sTentative.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Tentative"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sConfident.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Confident"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sAnalytical.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Analytical"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sSadness.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Sadness"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sPositive.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Positive"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sNegative.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Negative"+Chr(34)+"},{"+Chr(34)+"score"+Chr(34)+": "+sNeutral.ToString+","+Chr(34)+"tone_name"+Chr(34)+": "+Chr(34)+"Neutral"+Chr(34)+"}]"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2032.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1602.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,227.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
